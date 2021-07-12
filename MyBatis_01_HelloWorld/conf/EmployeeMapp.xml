@@ -5,9 +5,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <!--
 	namespace: 名称空间
+	id: 唯一标识
+	resultType: 返回值类型
 -->
 <mapper namespace="com.dragontalker.mybatis.EmployeeMapper">
-	<select id="selectBlog" resultType="Blog">
+	<select id="selectEmp" resultType="Blog">
 		select * from Blog where id = #{id}
 	</select>
 </mapper>
