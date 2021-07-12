@@ -10,6 +10,10 @@ import org.junit.Test;
 
 public class MyBatisTest {
 
+	/**
+	 * 1. 根据xml配置文件(全局配置文件), 创建一个SqlSessionFactory对象
+	 * @throws IOException
+	 */
 	@Test
 	public void test() throws IOException {
 		String resource = "mybatis-config.xml";
