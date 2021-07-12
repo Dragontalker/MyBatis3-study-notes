@@ -9,7 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	resultType: 返回值类型
 -->
 <mapper namespace="com.dragontalker.mybatis.EmployeeMapper">
-	<select id="selectEmp" resultType="Blog">
-		select * from Blog where id = #{id}
+	<select id="selectEmp" resultType="com.dragontalker.mybatis.bean.Employee">
+		select * from tbl_employee where id = #{id}
 	</select>
 </mapper>
