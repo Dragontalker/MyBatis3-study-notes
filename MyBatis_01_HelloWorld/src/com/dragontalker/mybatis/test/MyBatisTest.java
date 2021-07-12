@@ -30,9 +30,16 @@ public class MyBatisTest {
 		 */
 		SqlSession openSession = sqlSessionFactory.openSession();
 		
-		Employee employee = 
-				openSession.selectOne("com.dragontalker.batis.EmplyeeMapper.selectEmp", 1);
-		
-		System.out.println(employee);
+		try {
+			Employee employee = 
+					openSession.selectOne("com.dragontalker.batis.EmplyeeMapper.selectEmp", 1);
+			
+			System.out.println(employee);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			openSession.close();
+		}
+			
 	}
 }
