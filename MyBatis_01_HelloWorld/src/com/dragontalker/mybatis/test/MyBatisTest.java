@@ -25,27 +25,20 @@ public class MyBatisTest {
 	 */
 	@Test
 	public void test() throws IOException {
-		String resource = "mybatis-config.xml";
-		InputStream inputStream = Resources.getResourceAsStream(resource);
-		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-		
-		/**
-		 * 2. 获取sqlSession实例, 能直接执行已经映射的SQL语句
-		 * @param statement: Unique identifier matching the statement to use
-		 * @param parameter: A parameter object to pass to the statement
-		 */
+
+		// 2、获取sqlSession实例，能直接执行已经映射的sql语句
+		// sql的唯一标识：statement Unique identifier matching the statement to use.
+		// 执行sql要用的参数：parameter A parameter object to pass to the statement.
+		SqlSessionFactory sqlSessionFactory = getSqlSessionFactory();
+
 		SqlSession openSession = sqlSessionFactory.openSession();
-		
 		try {
-			Employee employee = 
-					openSession.selectOne("com.dragontalker.batis.EmplyeeMapper.selectEmp", 1);
-			
+			Employee employee = openSession.selectOne(
+					"com.dragontalker.mybatis.EmployeeMapper.selectEmp", 1);
 			System.out.println(employee);
-		} catch (Exception e) {
-			e.printStackTrace();
 		} finally {
 			openSession.close();
 		}
-			
+
 	}
 }
