@@ -3,12 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!--
-	namespace: 名称空间
-	id: 唯一标识
-	resultType: 返回值类型
-	#{id}: 从传递过来的参数中取出id值
--->
+
 <mapper namespace="com.dragontalker.mybatis.EmployeeMapper">
 	<select id="selectEmp" resultType="com.dragontalker.mybatis.bean.Employee">
 		select * from tbl_employee where id = #{id}
