@@ -12,6 +12,12 @@ import org.junit.Test;
 import com.dragontalker.mybatis.bean.Employee;
 
 public class MyBatisTest {
+	
+	public SqlSessionFactory getSqlSessionFactory() throws IOException {
+		String resource = "mybatis-config.xml";
+		InputStream inputStream = Resources.getResourceAsStream(resource);
+		return new SqlSessionFactoryBuilder().build(inputStream);
+	}
 
 	/**
 	 * 1. 根据xml配置文件(全局配置文件), 创建一个SqlSessionFactory对象

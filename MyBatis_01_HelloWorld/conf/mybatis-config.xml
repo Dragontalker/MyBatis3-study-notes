@@ -14,6 +14,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 			</dataSource>
 		</environment>
 	</environments>
+	
+	<!-- 将我们写好的SQL映射文件(EmployeeMapper.xml)连接到映射文件中 -->
 	<mappers>
 		<mapper resource="EmployeeMapper.xml" />
 	</mappers>
