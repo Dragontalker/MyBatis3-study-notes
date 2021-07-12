@@ -13,3 +13,8 @@ CREATE TABLE tbl_employee(
     `email` VARCHAR(255)
 );
 
+INSERT INTO tbl_employee
+VALUES (1, "tom", "0", "tom@atguigu.com");
+
+SELECT * FROM tbl_employee;
+
