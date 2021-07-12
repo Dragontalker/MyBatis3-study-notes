@@ -9,6 +9,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.junit.Test;
 
+import com.dragontalker.mybatis.bean.Employee;
+
 public class MyBatisTest {
 
 	/**
@@ -26,8 +28,11 @@ public class MyBatisTest {
 		 * @param statement: Unique identifier matching the statement to use
 		 * @param parameter: A parameter object to pass to the statement
 		 */
-		SqlSession sqlSession = sqlSessionFactory.openSession();
+		SqlSession openSession = sqlSessionFactory.openSession();
 		
-		openSession.selectOne("")
+		Employee employee = 
+				openSession.selectOne("com.dragontalker.batis.EmplyeeMapper.selectEmp", 1);
+		
+		System.out.println(employee);
 	}
 }
