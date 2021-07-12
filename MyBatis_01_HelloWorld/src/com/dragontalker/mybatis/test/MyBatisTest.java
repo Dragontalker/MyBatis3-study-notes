@@ -21,7 +21,13 @@ public class MyBatisTest {
 		InputStream inputStream = Resources.getResourceAsStream(resource);
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		
-		// 2. 获取sqlSession实例, 能直接执行已经映射的sql语句
+		/**
+		 * 2. 获取sqlSession实例, 能直接执行已经映射的sql语句
+		 * @param statement: Unique identifier matching the statement to use
+		 * @param parameter: A parameter objec to pass to the statement
+		 */
 		SqlSession sqlSession = sqlSessionFactory.openSession();
+		
+		openSession.selectOne("")
 	}
 }
