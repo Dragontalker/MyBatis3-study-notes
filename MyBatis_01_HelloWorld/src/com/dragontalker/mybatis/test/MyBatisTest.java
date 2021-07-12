@@ -22,9 +22,9 @@ public class MyBatisTest {
 		SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		
 		/**
-		 * 2. 获取sqlSession实例, 能直接执行已经映射的sql语句
+		 * 2. 获取sqlSession实例, 能直接执行已经映射的SQL语句
 		 * @param statement: Unique identifier matching the statement to use
-		 * @param parameter: A parameter objec to pass to the statement
+		 * @param parameter: A parameter object to pass to the statement
 		 */
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		
